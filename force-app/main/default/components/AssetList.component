@@ -1,0 +1,18 @@
+<apex:component controller="assetController" >
+
+      <apex:pageBlockSection Title="All Asset">
+          <apex:pageBlockTable value="{! objAsset}" var="ast">          
+            <apex:column headerValue=" " >
+               <apex:commandLink value="Edit" action="{!addorEdit}">
+                  <apex:param name="vfParam" value="{!ast.id}" assignTo="{!vfParam}"/>
+               </apex:commandLink>
+            </apex:column>
+            <apex:column value="{! ast.Name}" />
+            <apex:column value="{! ast.Model__c}"/>
+            <apex:column value="{! ast.Make__c}"/>
+            <apex:column value="{! ast.Year__c}"/>
+            <apex:column value="{! ast.Used__c}"/>
+            <apex:column value="{! ast.Price__c}"/>         
+          </apex:pageBlockTable>          
+      </apex:pageBlockSection>
+</apex:component>

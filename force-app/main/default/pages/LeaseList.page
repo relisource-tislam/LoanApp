@@ -1,0 +1,29 @@
+<apex:page controller="leaseController" > <!-- lightningStylesheets="true"  -->
+<apex:form >
+  <apex:pageBlock title="Lease Information">
+       <apex:pageBlockButtons location="bottom">
+          <apex:commandButton value="New" action="{!newOrAddLease}"/>
+          <!-- <apex:commandButton value="Next" action="{!nextGrid}"/> -->
+     </apex:pageBlockButtons>
+      <apex:pageBlockSection Title="All Lease">
+          <apex:pageBlockTable value="{! objleas}" var="leas">          
+            <apex:column headerValue=" " >
+               <apex:commandLink value="Edit" action="{!newOrAddLease}">
+                  <apex:param name="vfParam" value="{!leas.Id}" assignTo="{!vfParam}"/>
+               </apex:commandLink>
+            </apex:column>
+                <apex:column value="{! leas.Name}" />            
+                <apex:column value="{! leas.First_Name__c}"/>
+                <apex:column value="{! leas.Last_Name__c}"/>
+                <apex:column value="{! leas.Father_s_Name__c}"/>
+                <apex:column value="{! leas.Mother_s_Name__c}"/>
+                <apex:column value="{! leas.SSN__c}"/>         
+                <apex:column value="{! leas.Cell_no__c}"/>
+                <apex:column value="{! leas.Email__c}"/>   
+                <apex:column value="{! leas.Address__c}"/>  
+                <apex:column value="{! leas.Occupation__c }"/>       
+           </apex:pageBlockTable>          
+      </apex:pageBlockSection>
+  </apex:pageBlock>
+ </apex:form> 
+</apex:page>

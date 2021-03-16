@@ -1,0 +1,14 @@
+<apex:component controller="documentController">
+      <apex:pageBlockSection Title="All Documents">
+          <apex:pageBlockTable value="{! objDoc}" var="doc">          
+            <apex:column headerValue=" " >
+               <apex:commandLink value="Edit" action="{!addOrUpdate}">
+                 <apex:param name="vfParam" value="{!doc.Id}" assignTo="{!vfParam}"/>
+               </apex:commandLink>
+            </apex:column>
+            <apex:column value="{! doc.Name}" />            
+            <apex:column value="{! doc.Name__c}"/>
+            <apex:column value="{! doc.Type__c}"/>
+          </apex:pageBlockTable>          
+      </apex:pageBlockSection>
+</apex:component>

@@ -1,0 +1,27 @@
+<apex:page controller="guarantorDetailsController" showHeader="false" sidebar="false" >
+
+<apex:form >
+      <apex:pageBlock >
+           
+           <apex:pageBlockButtons location="bottom">
+              <apex:commandButton value="Cancel" action="{!Cancel}" immediate="true"/>
+              <apex:commandButton value="Save" action="{!addOrEdit}"/>
+           </apex:pageBlockButtons>
+           <apex:pageBlockSection title="Add Guarantor" columns="1">
+            
+          <apex:pageMessages ></apex:pageMessages> 
+               <apex:inputField value="{!objGrnt.First_Name__c}"/>
+               <apex:inputField value="{!objGrnt.Name}"/>
+               <apex:inputField value="{!objGrnt.Father_s_Name__c}"/>
+               <apex:inputField value="{!objGrnt.Mother_s_Name__c}"/>  
+               <apex:inputField value="{!objGrnt.Date_of_Birth__c}"/>
+               <apex:inputField value="{!objGrnt.SSN__c}"/>              
+               <apex:inputField value="{!objGrnt.Occupation__c }"/>  
+               <apex:inputField value="{!objGrnt.Cell_No__c}"/>
+               <apex:inputField value="{!objGrnt.Email__c}"/> 
+               <apex:inputField value="{!objGrnt.Address__c}"/>     
+          </apex:pageBlockSection>       
+      </apex:pageBlock> 
+  </apex:form>
+  
+</apex:page>

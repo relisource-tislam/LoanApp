@@ -1,0 +1,17 @@
+<apex:component controller="guarantorController">
+
+      <apex:pageBlockSection Title="All Guarantors">
+          <apex:pageBlockTable value="{! objGuarantor}" var="grnt">          
+            <apex:column headerValue=" " >
+               <apex:commandLink value="Edit" action="{! editOrAdd}">
+                  <apex:param name="vfParam" value="{!grnt.Id}" assignTo="{!vfParam}"/>
+               </apex:commandLink>
+            </apex:column>
+            <apex:column value="{! grnt.Name}" />            
+            <apex:column value="{! grnt.obj_GuarantorCollection__c}"/>
+            <apex:column value="{! grnt.Relation__c}"/>
+            <apex:column value="{! grnt.Percentage__c}"/>
+            <apex:column value="{! grnt.Primary__c}"/>  
+          </apex:pageBlockTable>          
+      </apex:pageBlockSection>
+</apex:component>

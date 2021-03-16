@@ -1,0 +1,12 @@
+<apex:page controller="assetController" >
+<apex:form >
+    <apex:pageBlock title="All Asset">
+    <apex:pageMessages ></apex:pageMessages>
+       <apex:pageBlockButtons location="bottom">
+          <apex:commandButton value="Add" action="{!addorEdit}"/>
+          <apex:commandButton value="Next" action="{!nextGrid}"/>
+     </apex:pageBlockButtons>
+     <c:AssetList ></c:AssetList>     
+  </apex:pageBlock> 
+ </apex:form> 
+</apex:page>

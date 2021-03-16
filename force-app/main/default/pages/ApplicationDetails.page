@@ -1,0 +1,30 @@
+<apex:page controller="appDetailsController" showHeader="false" sidebar="false" >
+
+<apex:form >
+      <apex:pageBlock >
+           <apex:pageBlockButtons location="bottom" >
+              <apex:commandButton value="Cancel" action="{!Cancel}"/>
+               <apex:commandButton value="{! btnText }" action="{!addOrUpdate}"/>
+           </apex:pageBlockButtons>
+           <apex:pageMessages ></apex:pageMessages>
+           <apex:pageBlockSection title="Lease Information" columns="2" collapsible="false">
+               <apex:inputField value="{!objLeas.First_Name__c}"/>
+               <apex:inputField value="{!objLeas.Name}"/>
+               <apex:inputField value="{!objLeas.Father_s_Name__c}"/>
+               <apex:inputField value="{!objLeas.Mother_s_Name__c}"/> 
+               <apex:inputField value="{!objLeas.Occupation__c}"/>
+               <apex:inputField value="{!objLeas.SSN__c}"/>
+               <apex:inputField value="{!objLeas.Date_of_Birth__c}"/>
+               <apex:inputField value="{!objLeas.Cell_no__c}"/> 
+               <apex:inputField value="{!objLeas.Address__c}"/>
+               <apex:inputField value="{!objLeas.Email__c}"/>   
+           </apex:pageBlockSection>
+           <apex:pageBlockSection title="Application Information" columns="2" collapsible="false">
+               <apex:inputField value="{!objApp.Loan_title__c}"/>
+               <apex:inputField value="{!objApp.Requested_Amount__c}"/>
+               <apex:inputField value="{!objApp.Maturity__c}"/> 
+               <apex:inputField value="{!objApp.Proposed_collaterals__c}"/>                      
+          </apex:pageBlockSection>                  
+      </apex:pageBlock> 
+  </apex:form>  
+</apex:page>

@@ -1,0 +1,11 @@
+<apex:page controller="guarantorController">
+ <apex:form >  
+    <apex:pageBlock title="Guarantor Information">
+        <apex:pageBlockButtons location="bottom">
+           <apex:commandButton value="Add" action="{!editOrAdd}"/>
+           <apex:commandButton value="Next" action="{!nextGrid}"/>
+        </apex:pageBlockButtons>
+        <c:GuarantorList />
+    </apex:pageBlock>
+ </apex:form> 
+</apex:page>

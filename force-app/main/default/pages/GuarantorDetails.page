@@ -1,0 +1,48 @@
+<apex:page controller="gurantorDetailsController" showHeader="false" sidebar="false" >
+
+<apex:form id="form">
+      <apex:pageBlock >
+           <apex:pageBlockButtons location="bottom" >
+              <apex:commandButton value="Cancel" action="{!Cancel}" immediate="true"/>
+              <apex:commandButton value="{! btnText }" action="{!addOrUpdate}"/> <!--  rerender="msgId" -->
+           </apex:pageBlockButtons>
+           
+            <apex:pageBlockSection title="{! btnText } Guarantor Information" columns="1">
+            <apex:pageMessages />  <!--Error message display id="msgId" -->
+            
+            <apex:pageBlock >   
+                <div>
+                   <div style="width:17%; float:left" >
+                        <label class="gurantLabel">Guarantor</label>
+                   </div>
+                   <div style="width:82.5%; float:right"> 
+                       <apex:inputField id="lkGuarantorId" value="{!objGuarant.obj_GuarantorCollection__c}" />
+                       <apex:commandButton id="btnAddGuarantor" value="Add Guatantor" action="{!addGuarantor}" immediate="true"/>
+                   </div>
+                </div>   
+            </apex:pageBlock>
+           <apex:inputField value="{!objGuarant.Primary__c}"/>
+           <apex:inputField value="{!objGuarant.Relation__c}"/> 
+           <apex:inputField value="{!objGuarant.Percentage__c}"/>   
+          </apex:pageBlockSection>         
+      </apex:pageBlock> 
+  </apex:form> 
+  
+<style>
+    .bPageBlock {
+        border-top: none;
+        border-bottom: none;
+    }
+    body .secondaryPalette.bPageBlock{
+        border: none;
+    }
+    
+    .bPageBlock .gurantLabel{
+        font-weight: bold;
+        padding: 0 5px;
+        margin-left: 11.6%;
+        float:right;
+    }
+</style>
+  
+</apex:page>

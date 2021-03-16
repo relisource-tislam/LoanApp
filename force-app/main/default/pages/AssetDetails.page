@@ -1,0 +1,21 @@
+<apex:page controller="assetDetailsController" showHeader="false" sidebar="false" >
+
+<apex:form >
+      <apex:pageBlock >
+           <apex:pageBlockButtons location="bottom">
+              <apex:commandButton value="Cancel" action="{!Cancel}" immediate="true"/>
+              <apex:commandButton value="{! btnText }" action="{!addOrEdit}" rendered="true"/>
+              <!--<apex:commandButton value="Next" action="{!nextGrid}"/> -->
+           </apex:pageBlockButtons>
+           <apex:pageMessages />
+           <apex:pageBlockSection title="{! btnText } Asset Information" columns="1" collapsible="false">
+               <apex:inputField value="{!objAst.Model__c}"/>
+               <apex:inputField value="{!objAst.Make__c}"/>
+               <apex:inputField value="{!objAst.Year__c}"/>
+               <apex:inputField value="{!objAst.Used__c}"/> 
+               <apex:inputField value="{!objAst.Price__c}"/>       
+          </apex:pageBlockSection>         
+      </apex:pageBlock> 
+  </apex:form>
+  
+</apex:page>

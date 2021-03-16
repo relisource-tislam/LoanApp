@@ -1,0 +1,28 @@
+<apex:page controller="applicationController" > <!-- lightningStylesheets="true"  -->
+<apex:form >
+  <apex:pageBlock title="Application Information">
+       <apex:pageBlockButtons location="bottom">
+          <apex:commandButton value="New" action="{!newOrAddapp}"/>
+     </apex:pageBlockButtons>
+     <apex:pageMessages ></apex:pageMessages> 
+      <apex:pageBlockSection Title="All Application">
+         <apex:pageBlockTable value="{! objApp}" var="app">                    
+            <apex:column headerValue=" " >
+               <apex:commandLink value="Edit" action="{!newOrAddapp}">
+                  <apex:param name="vfParam" value="{!app.Id}" assignTo="{!vfParam}"/>
+               </apex:commandLink>
+            </apex:column>
+            <apex:column value="{! app.Name}" />            
+            <apex:column value="{! app.Loan_title__c}"/>
+            <apex:column value="{! app.Lease__r.Last_Name__c}"/>
+            <apex:column value="{! app.Lease__r.SSN__c}"/>
+            <apex:column value="{! app.Lease__r.Cell_no__c}"/>
+            <apex:column value="{! app.Requested_Amount__c}"/>
+            <apex:column value="{! app.Maturity__c}"/>            
+            <apex:column value="{! app.Proposed_collaterals__c}"/>
+            <apex:column value="{! app.Status__c }"/>          
+          </apex:pageBlockTable>          
+      </apex:pageBlockSection>
+  </apex:pageBlock>
+ </apex:form> 
+</apex:page>

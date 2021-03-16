@@ -1,0 +1,20 @@
+<apex:page Controller="submitController">
+ <apex:form >
+ <apex:pageBlock title="Summary/Confirmation">
+ <apex:pageMessages ></apex:pageMessages> 
+     <apex:pageBlockButtons location="bottom" >
+         <apex:commandButton value="Cancel" action="{!Cancel}" immediate="true"/>
+         <apex:commandButton value="Submit" action="{!Submit}"/>
+     </apex:pageBlockButtons>    
+        <apex:pageBlockSection title="Lease Information" collapsible="false" columns="1"> 
+                <apex:outputField value="{! objApp.Lease__r.First_Name__c}" />
+                <apex:outputField value="{! objApp.Lease__r.Name}" />
+                <apex:outputField value="{! objApp.Lease__r.Date_of_Birth__c}" />
+                <apex:outputField value="{! objApp.Lease__r.SSN__c }" />
+        </apex:pageBlockSection> 
+        <c:AssetList />
+        <c:GuarantorList />
+        <c:DocumentList />
+ </apex:pageBlock> 
+ </apex:form>
+</apex:page>

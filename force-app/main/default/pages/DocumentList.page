@@ -1,0 +1,12 @@
+<apex:page controller="documentController" >
+    <apex:form >
+      <apex:pageBlock title="Document Information">
+      <apex:pageMessages />
+        <apex:pageBlockButtons location="bottom" >
+           <apex:commandButton value="Add" action="{!addOrUpdate}"/>
+           <apex:commandButton value="Next" action="{!nextGrid}"/>
+       </apex:pageBlockButtons>
+       <c:DocumentList />  <!-- Component -->
+      </apex:pageBlock>
+    </apex:form>
+</apex:page>

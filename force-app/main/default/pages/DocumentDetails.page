@@ -1,0 +1,26 @@
+<apex:page controller="docDetailsController">
+
+  <apex:form >
+      <apex:pageBlock >
+           <apex:pageBlockButtons location="bottom">
+               <apex:commandButton value="Cancel" action="{! Cancel}" immediate="true"/>
+               <apex:commandButton value="{! btnText }" action="{! addOrEdit}"/>
+           </apex:pageBlockButtons>
+           <apex:pageMessages />
+           <apex:pageBlockSection title="{! btnText } Document's Information" columns="1">
+               <apex:inputField value="{!objDoc.Name__c}"/>
+               <apex:inputField value="{!objDoc.Type__c}"/> 
+               <apex:inputFile id="fileToUpload" value="{! fileBody}" filename="{! fileName}" />
+          </apex:pageBlockSection>                  
+      </apex:pageBlock> 
+  </apex:form>
+    
+   <apex:relatedList subject="{! docId}"  list="CombinedAttachments" /> 
+    
+<style>               
+    input#j_id0\:j_id1\:j_id2\:j_id32\:fileToUpload {
+        margin-left: 18%;
+    }
+</style> 
+    
+</apex:page>
